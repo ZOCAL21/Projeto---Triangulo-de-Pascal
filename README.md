@@ -5,7 +5,8 @@ Um programa que cálcula e exibe uma matriz em forma de triangulo que informa va
 Conceitos utilizados:
 
  •Matrizes bidimensionais.
- •Estruturas de repetição (for).
+
+ •Estruturas de repetição (for)
  Usado para preencher e imprimir o triângulo.
 
  •Estruturas condicionais (if/else).
