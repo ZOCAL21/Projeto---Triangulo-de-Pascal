@@ -1,0 +1,49 @@
+#include <stdio.h>
+
+#define MAX 15
+
+int main()
+{
+    int triangulo[MAX][MAX];
+    int linhas, i, j;
+
+    printf("Digite a quantidade de linhas do Triangulo de Pascal (1 a %d): ", MAX);
+
+    if (scanf("%d", &linhas) != 1) {
+        printf("Entrada invalida!\n");
+        return 1;
+    }
+
+    if (linhas < 1 || linhas > MAX) {
+        printf("Digite um valor entre 1 e %d.\n", MAX);
+        return 1;
+    }
+
+    for (i = 0; i < linhas; i++) {
+        for (j = 0; j <= i; j++) {
+
+            if (j == 0 || j == i) {
+                triangulo[i][j] = 1;
+            }
+            else {
+                triangulo[i][j] = triangulo[i - 1][j - 1]
+                                + triangulo[i - 1][j];
+            }
+        }
+    }
+
+    printf("\nTriangulo de Pascal com %d linhas:\n\n", linhas);
+
+    for (i = 0; i < linhas; i++) {
+
+        for (j = 0; j < linhas - i - 1; j++) {
+            
+        for (j = 0; j <= i; j++) {
+            printf("%4d", triangulo[i][j]);
+        }
+
+        printf("\n");
+    }
+
+    return 0;
+}
